@@ -1,0 +1,25 @@
+* {
+    margin: 0;
+    /* box-sizing: border-box; */
+    margin-top: 20px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 25px;
+    margin-left: 10px;
+}
+
+.color {
+    border: 1px solid rgb(0,0,0);
+    display: inline-block;
+}
+.color:nth-child(2) {
+    background-color: black;
+}
+.color:nth-child(3) {
+    background-color: blue;
+}
+.color:nth-child(4) {
+    background-color: red;
+}
+.color:nth-child(5) {
+    background-color: green;
+}
