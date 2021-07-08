@@ -3,7 +3,7 @@
     /* box-sizing: border-box; */
     margin-top: 20px;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
-    font-size: 25px;
+    font-size: 20px;
     margin-left: 10px;
 }
 
@@ -11,6 +11,11 @@
     border: 1px solid rgb(0,0,0);
     display: inline-block;
 }
+
+#title {
+    text-align: center;
+}
+
 .color:nth-child(2) {
     background-color: black;
 }
@@ -22,4 +27,20 @@
 }
 .color:nth-child(5) {
     background-color: green;
+}
+
+#pixel-board {
+    text-align: center;
+}
+
+.tabela {
+    border: 1px solid black;
+}
+
+.pixel {
+    background-color: white;
+    color: white;
+    height: 40px;
+    width: 40px;
+    border: 1px solid black;
 }
