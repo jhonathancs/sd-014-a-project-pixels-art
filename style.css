@@ -1,25 +1,46 @@
 * {
     margin: 0;
-    /* box-sizing: border-box; */
     margin-top: 20px;
-    font-size: 30px;
+    font-size: 25px;
     margin-left: 10px;
     margin-right: 10px;
-    /* text-align: center; */
-    /* box-sizing: border-box; */
+    text-align: center;
 }
 
 #title {
-    font-size: 80px;
+    font-size: 50px;
 }
 
 .color {
     border: 1px solid rgb(0,0,0);
     display: inline-block;
-    height: 100px;
-    width: 100px;    
+    height: 50px;
+    width: 50px;    
 }
 
-.tabela table {
-    text-align: center;
+.pixel {
+    background-color: white;
+    border: 1px solid rgb(0,0,0);
+    height: 40px;
+    width: 40px;
+} 
+#pixel-board{
+    margin-top: 20px !important;
+    /* width: 40px !important; Importante manter o !important rs  ultilizar isso ela substituira todos os comandos sobre ela */
+    margin: auto;
+}
+
+#board-size {
+    width: 5%;
+    height: 50px;
+}
+
+#generate-board {
+    width: 5%;
+    height: 50px;
+}
+
+#clear-board {
+    width: 8%;
+    height: 50px
 }

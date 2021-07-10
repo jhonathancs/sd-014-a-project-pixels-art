@@ -6,6 +6,8 @@ colors[2].style.backgroundColor = `rgb(${Math.random() * 255}, ${Math.random() *
 colors[3].style.backgroundColor = `rgb(${Math.random() * 255}, ${Math.random() * 255}, ${Math.random() * 254})`;
 
 
+
+// tabela 
 // lembrar tr sao linhas e td sao celulas
 const tabela = document.querySelector('#pixel-board');
 function pixelsTable(numeros){
@@ -17,8 +19,9 @@ function pixelsTable(numeros){
       lines.appendChild(celula);
       celula.className = 'pixel';
       celula.style.backgroundColor = 'white';
-      tabela.border = "1px";
-      tabela.cellPadding = "40px";
+      // tabela.border = "1px"; borda da celula
+      // tabela.cellPadding = "40px"; tamanho da celula
+      // tabela.cellSpacing = "0px"; espaco da celula
     }
   }
 }
@@ -63,6 +66,37 @@ window.addEventListener('load', () => {
   const limpado = document.querySelector('#clear-board');
   limpado.addEventListener('click', clearMan);
  
+  function clear() {
+    tabela.innerHTML = '';
+  }
+
+  function criarTabela() {
+    const botao = document.getElementById('generate-board')
+    botao.addEventListener('click', () => {
+      let quantidades = document.getElementById('board-size').value;
+      document.getElementById('board-size').value = '';
+      clear()
+      if (quantidades == '') {
+        window.alert('Board inválido!');
+      } 
+      if (quantidades < 5) {
+        quantidades = 5;
+      }
+      if (quantidades > 50) {
+        quantidades = 50;
+      }
+      pixelsTable(quantidades);
+    }
+    )
+    // body
+  }
+  criarTabela();
+  
+
+
+
+  
+
     // vamos criar o corpo da tabela, ou seja, o tbody 
    
 
