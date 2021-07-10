@@ -1,14 +1,38 @@
 // definindo cores no ultimo sera aleatorio.
 const colors = document.querySelectorAll('.color');
 colors[0].style.background = 'black';
-colors[1].style.background = 'blue';
-colors[2].style.background = 'red';
-colors[3].style.background = 'green';
+colors[1].style.backgroundColor = `rgb(${Math.random() * 255}, ${Math.random() * 255}, ${Math.random() * 254})`;
+colors[2].style.backgroundColor = `rgb(${Math.random() * 255}, ${Math.random() * 255}, ${Math.random() * 254})`;
+colors[3].style.backgroundColor = `rgb(${Math.random() * 255}, ${Math.random() * 255}, ${Math.random() * 254})`;
 
+
+// lembrar tr sao linhas e td sao celulas
+const tabela = document.querySelector('#pixel-board');
+function pixelsTable(numeros){
+  for (let linha = 0; linha < numeros; linha += 1) {
+    const lines = document.createElement('tr');
+    tabela.appendChild(lines);
+    for (let celulas = 0; celulas < numeros; celulas += 1) {
+      const celula = document.createElement('td');
+      lines.appendChild(celula);
+      celula.className = 'pixel';
+      celula.style.backgroundColor = 'white';
+      tabela.border = "1px";
+      tabela.cellPadding = "40px";
+    }
+  }
+}
+pixelsTable(5);
+
+
+// selecionar no inicio
 window.addEventListener('load', () => {
     colors[0].classList.add('selected');
   });
 
+
+// alterar cor do pixel selecionado
+// pixel selecionado para mudar de cor etc
   function colorSelector() {
     const selectedColor = document.querySelector('#color-palette');
     selectedColor.addEventListener('click', (event) => {
@@ -18,8 +42,10 @@ window.addEventListener('load', () => {
   }
   colorSelector();
 
+
+// mudanca de cor selecionado na tabela
   function colorFill() {
-    const pixelsFill = document.querySelector('.tabela');
+    const pixelsFill = document.querySelector('#pixel-board');
     pixelsFill.addEventListener('click', (event) => {
       const newColor = document.querySelector('.selected').style.backgroundColor;
       event.target.style.backgroundColor = newColor;
@@ -27,12 +53,30 @@ window.addEventListener('load', () => {
   }
   colorFill();
 
-//   limpar quadrp
-  function clearBoard() {
-    const pixelBoard = document.querySelectorAll('.pixel');
-    for (let index = 0; index < pixelBoard.length; index += 1) {
-      pixelBoard[index].style.backgroundColor = 'white';
+//   limpar quadro
+   function clearMan() {
+    const boxTable = document.querySelectorAll('.pixel');
+    for (let index = 0; index < boxTable.length; index += 1) {
+      boxTable[index].style.backgroundColor = 'white';
     }
   }
-  const clearBoardButton = document.querySelector('#clear-board');
-  clearBoardButton.addEventListener('click', clearBoard);
+  const limpado = document.querySelector('#clear-board');
+  limpado.addEventListener('click', clearMan);
+ 
+    // vamos criar o corpo da tabela, ou seja, o tbody 
+   
+
+    // const tabela = document.querySelector('#pixel-board');
+    // function criarTabela(n){
+    //     for(let indice = 0; indice < n; indice += 1){
+    //         const createRow = document.createElement('div');
+    //         createRow.className = 'pixel-board'
+    //             for (let index = 0; index < n; index += 1){
+    //                 const novoPixel = document.createElement('div');
+    //                 novoPixel.className = 'pixel'
+    //                 createRow.appendChild(novoPixel);
+    //             }
+    //             tabela.appendChild(createRow);
+    //     }
+    // }
+    // criarTabela(10);
